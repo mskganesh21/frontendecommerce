@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bkg: 207 207 207;
+    --txt: 33 33 33;
+    --hvr: 0 86 179; /* Light Theme */
+    --hvr: 0 68 148; /* Dark Theme */
+    --buttonbkg: 0 128 0; /* Green */
+    --buttonclr: 255 255 255; /* White */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bkg: 33 33 33;
+      --txt: 207 207 207;
+      --hvr: 0 86 179;
+      --buttonbkg: 255 255 255; /* Green */
+      --buttonclr: 0 128 0; /* White */
+    }
+  }
+
+  html {
+    color-scheme: dark light;
+  }
+
+  /* Light Theme */
+  [data-theme="light"] {
+    color-scheme: light;
+    --bkg: 207 207 207;
+    --txt: 33 33 33;
+    --hvr: 0 86 179;
+    --buttonbkg: 0 128 0; /* Green */
+    --buttonclr: 255 255 255; /* White */
+  }
+
+  /* Dark Theme */
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --bkg: 33 33 33;
+    --txt: 207 207 207;
+    --hvr: 0 68 148;
+    --buttonbkg: 255 255 255; /* Green */
+    --buttonclr: 0 128 0; /* White */
+  }
+
+  body {
+    color: rgb(var(--txt));
+    background-color: rgb(var(--bkg));
+  }
+}
